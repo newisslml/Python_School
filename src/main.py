@@ -4,21 +4,22 @@ from people.docente import Docente
 from people.estudiante import Estudiante
 from utils.nota import Nota
 from utils.fecha import Fecha
-from menus.menuDocente import menu_docente
-from menus.menuEstudiante import menu_estudiante
+from menus.menudocente import menu_docente
+from menus.menuestudiante import menu_estudiante
 
 listaDocentes = []
 
-
+# Funcion para reutilizar y no repetir codigo
 def spaces_menus():
     print("\n")
     print("·····································")
 
-
+# Funcion para reutilizar y no repetir codigo
 def not_option():
     print("No existe esa opcion, intente nuevamente...")
 
-
+# Menu principal que deriva a otros sub menus
+# Sirve para desaclopar el codigo y se vea mas ordenado
 def menu_principal():
     spaces_menus()
     print("1. Menu Docente")
@@ -27,7 +28,7 @@ def menu_principal():
     option = int(input("Ingrese su Opcion de (1-5): "))
     return option
 
-
+# Loop infinito hasta que el usuario decida Salir = break
 while True:
     option = menu_principal()
     match option:
